@@ -1,0 +1,5 @@
+docker compose run --service-ports webgo bash
+
+go mod init github.com/devops-geomais/radarscrapper
+
+go get github.com/gocolly/colly/v2@latest
