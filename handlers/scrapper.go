@@ -3,7 +3,7 @@ package handlers
 import (
 	"github.com/gofiber/fiber/v2"
 	"strings"
-
+     "fmt"
 	"github.com/gocolly/colly"
 )
 
@@ -17,6 +17,7 @@ func VersaoEsus(c *fiber.Ctx) error {
 
 func VerificaVersao(c *fiber.Ctx) error {
 	var versao string = c.Query("v")
+	fmt.Println(versao)
 	return c.SendString(comparaVersao(versao))
 }
 
