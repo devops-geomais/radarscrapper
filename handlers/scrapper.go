@@ -40,9 +40,14 @@ func scrapVersao() string {
 func comparaVersao(versao string) string {
 	var versaoAtual string
 	versaoAtual = scrapVersao()
-	var retorno = "0"
-	if(versaoAtual == versao){
-		retorno = "1"
+	var retorno = "-1"
+	if (len(versao) > 0){
+		if(versaoAtual != versao){
+			retorno = "0"
+		}
+		if(versaoAtual == versao){
+			retorno = "1"
+		}
 	}
 	return retorno
 }
