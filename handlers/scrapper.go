@@ -31,7 +31,7 @@ func ScrapeVersion() (string, error) {
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true}, // Ignora SSL
 	})
 
-	c.OnHTML(".pricing-table li h3", func(e *colly.HTMLElement) {
+	c.OnHTML(".downloadButton_GNxa button", func(e *colly.HTMLElement) {
 		versaoElement := e.Text
 		arr := strings.Split(versaoElement, " ")
 
