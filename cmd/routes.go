@@ -10,4 +10,5 @@ func setupRoutes(app *fiber.App) {
 	app.Get("/", handlers.Home)
 	app.Get("/versaoesus", handlers.VersaoEsus)
 	app.Get("/verificaversao", handlers.VerificaVersao)
+	app.Get("/teste", handlers.Teste)
 }
