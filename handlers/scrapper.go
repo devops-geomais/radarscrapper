@@ -31,7 +31,7 @@ func ScrapeVersion() (string, error) {
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true}, // Ignora SSL
 	})
 
-	c.OnHTML(".downloadButton_GNxa button", func(e *colly.HTMLElement) {
+	c.OnHTML(".downloadButton_GNxa", func(e *colly.HTMLElement) {
 		versaoElement := e.Text
 		arr := strings.Split(versaoElement, " ")
 
@@ -41,10 +41,10 @@ func ScrapeVersion() (string, error) {
 			return
 		}
 
-		arrVersao = append(arrVersao, arr[1])
+		arrVersao = append(arrVersao, arr[2])
 	})
 
-	err := c.Visit("https://sisaps.saude.gov.br/esus/")
+	err := c.Visit("https://sisaps.saude.gov.br/sistemas/esusaps/")
 	if err != nil {
 		return "", fmt.Errorf("Error visiting website: %w", err)
 	}
